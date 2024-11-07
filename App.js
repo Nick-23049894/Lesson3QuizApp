@@ -23,11 +23,11 @@ export default function App() {
 
     return (
         <ImageBackground source={require('./images/bg.jpg')} style={styles.background}>
-            <ScrollView style={styles.container}>
-                <Text style={[styles.h1, styles.text]}>Welcome to Know your animals Quiz!</Text>
+            <ScrollView contentContainerStyle={styles.container}>
+                <Text style={[styles.h1, styles.text]}>Welcome to Know Your House Stark Quiz!</Text>
 
                 {/* Qn1 */}
-                <Text style={[styles.h1, styles.text]}>What is the name of Jon Snow's dire wolf?</Text>
+                <Text style={[styles.question, styles.text]}>What is the name of Jon Snow's dire wolf?</Text>
                 <Image source={require('./images/Ghost.jpg')} style={styles.image} />
                 <RNPickerSelect
                     onValueChange={(value) => Q1answer(value)}
@@ -41,7 +41,7 @@ export default function App() {
                 />
 
                 {/* Qn2 */}
-                <Text style={[styles.h1, styles.text]}>What are House Stark's words?</Text>
+                <Text style={[styles.question, styles.text]}>What are House Stark's words?</Text>
                 <Image source={require('./images/House Stark.jpg')} style={styles.image} />
                 <RNPickerSelect
                     onValueChange={(value) => Q2answer(value)}
@@ -55,7 +55,7 @@ export default function App() {
                 />
 
                 {/* Qn3 */}
-                <Text style={[styles.h1, styles.text]}>What is the name of House Stark's Valyrian steel Sword?</Text>
+                <Text style={[styles.question, styles.text]}>What is the name of House Stark's Valyrian steel Sword?</Text>
                 <Image source={require('./images/Ice.jpg')} style={styles.image} />
                 <RNPickerSelect
                     onValueChange={(value) => Q3answer(value)}
@@ -67,6 +67,7 @@ export default function App() {
                     ]}
                     style={pickerSelectStyles}
                 />
+
                 <TouchableOpacity style={styles.button} onPress={checkInput}>
                     <Text style={styles.buttonText}>Submit</Text>
                 </TouchableOpacity>
@@ -78,34 +79,49 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         padding: 16,
+        alignItems: 'center',
     },
     background: {
         flex: 1,
         resizeMode: "cover",
         justifyContent: "center",
+        backgroundColor: 'rgba(0, 0, 0, 0.6)', // Dark overlay for readability
     },
     image: {
-        width: 200,
-        height: 200,
+        width: 220,
+        height: 220,
         marginTop: 20,
+        borderRadius: 10, // Rounded corners for a modern look
+        borderColor: 'white',
+        borderWidth: 1,
     },
     h1: {
-        fontSize: 24,
+        fontSize: 28,
         fontWeight: 'bold',
+        marginBottom: 15,
+        color: 'white',
+        textAlign: 'center',
+    },
+    question: {
+        fontSize: 22,
+        fontWeight: '600',
+        marginTop: 25,
+        color: 'white',
+        textAlign: 'center',
     },
     text: {
         color: 'white',
     },
     button: {
-        backgroundColor: 'rgba(255, 255, 255, 0.7)',
+        backgroundColor: '#4CAF50',
         borderRadius: 8,
         paddingVertical: 12,
         paddingHorizontal: 25,
         alignItems: 'center',
-        marginTop: 20,
+        marginTop: 30,
     },
     buttonText: {
-        color: 'black',
+        color: 'white',
         fontSize: 18,
         fontWeight: 'bold',
     },
@@ -114,14 +130,14 @@ const styles = StyleSheet.create({
 const pickerSelectStyles = StyleSheet.create({
     inputAndroid: {
         fontSize: 16,
-        paddingVertical: 8,
-        paddingHorizontal: 10,
+        paddingVertical: 10,
+        paddingHorizontal: 15,
         borderWidth: 1,
         borderColor: 'white',
         borderRadius: 8,
         color: 'white',
         paddingRight: 30,
         backgroundColor: 'rgba(255, 255, 255, 0.2)',
+        marginTop: 15,
     },
-
 });
