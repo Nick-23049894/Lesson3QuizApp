@@ -24,7 +24,7 @@ export default function App() {
     return (
         <ImageBackground source={require('./images/bg.jpg')} style={styles.background}>
             <ScrollView contentContainerStyle={styles.container}>
-                <Text style={[styles.h1, styles.text]}>Welcome to Know Your House Stark Quiz!</Text>
+                <Text style={[styles.h1, styles.text]}>Welcome to Know Your House Stark Facts Quiz!</Text>
 
                 {/* Qn1 */}
                 <Text style={[styles.question, styles.text]}>What is the name of Jon Snow's dire wolf?</Text>
@@ -85,13 +85,13 @@ const styles = StyleSheet.create({
         flex: 1,
         resizeMode: "cover",
         justifyContent: "center",
-        backgroundColor: 'rgba(0, 0, 0, 0.6)', // Dark overlay for readability
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
     },
     image: {
         width: 220,
         height: 220,
         marginTop: 20,
-        borderRadius: 10, // Rounded corners for a modern look
+        borderRadius: 10,
         borderColor: 'white',
         borderWidth: 1,
     },
